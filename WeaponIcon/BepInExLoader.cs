@@ -15,7 +15,7 @@ namespace WeaponIcon
           MODNAME = "WeaponIconVisible",
           AUTHOR = "Endskill",
           GUID = "dev." + AUTHOR + "." + MODNAME,
-          VERSION = "1.1";
+          VERSION = "1.2";
 
         public static ManualLogSource BepInLog;
         public static ConfigEntry<bool> WeaponIcons;
