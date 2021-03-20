@@ -34,8 +34,6 @@ namespace WeaponIcon
     [HarmonyPatch(typeof(PlayerGuiLayer), nameof(PlayerGuiLayer.UpdateGUIElementsVisibility))]
     public class PrepareInjection
     {
-        private static System.Random _random = new System.Random();
-
         [HarmonyPostfix]
         public static void PostFix()
         {
@@ -48,15 +46,7 @@ namespace WeaponIcon
                 foreach (var inventorySlot in playerLayer.Inventory.m_inventorySlots)
                 {
                     inventorySlot.value.m_selected_icon.enabled = true;
-                    //Making 0.01% Chance per Weapon to be BIIIIG
-                    if (_random.Next(0, 10000) == 1)
-                    {
-                        inventorySlot.value.m_selected_icon.size = new Vector2(7600f, 3600f);
-                    }
-                    else
-                    {
-                        inventorySlot.value.m_selected_icon.size = new Vector2(145f, 69f);
-                    }
+                    inventorySlot.value.m_selected_icon.size = new Vector2(145f, 69f);
                 }
             }
         }
